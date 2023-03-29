@@ -38,3 +38,7 @@
 .SearchButton:hover {
     background-color: rgba(108, 65, 233, .7);
 }
+
+.text {
+    margin-bottom: 30px;
+}
