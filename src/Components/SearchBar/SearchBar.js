@@ -25,8 +25,9 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="SearchBar">
-                <input placeholder="Enter A Song, Album, or Artist" onChange={this.handleTermChange} />
-                <button className="SearchButton" onClick={this.search}>SEARCH</button>
+                <p>Ahoj, pokud mi chceš udělat radost. Můžeš mi vytvořit playlist na Spotify.</p>
+                <input placeholder="Hledej song, album nebo umělce" onChange={this.handleTermChange} />
+                <button className="SearchButton" onClick={this.search}>HLEDEJ SONGY</button>
             </div>
         );
     }
