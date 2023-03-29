@@ -1,5 +1,5 @@
 let clientID = 'a0a52b1c2d34418c9587d9135a2134d5';
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'https://jamming-krizvi.netlify.app/';
 
 let accessToken;
 
