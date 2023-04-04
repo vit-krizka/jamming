@@ -49,6 +49,7 @@ class Track extends React.Component {
         this.audioRef = React.createRef();
         this.addTrack = this.addTrack.bind(this);
         this.removeTrack = this.removeTrack.bind(this);
+        this.playPreview = this.playPreview.bind(this);
     }
 
     renderAction() {
@@ -95,7 +96,7 @@ class Track extends React.Component {
                             onClick={() => this.playPreview()}
                         />
                     </h3>
-                    <p>{this.props.track.artist} | {this.props.track.album}</p>
+                    <p>{this.props.track.artist} | {this.props.track.album}</p> | {this.props.track.preview_url}
                 </div>
                 {this.renderAction()}
                 <audio
