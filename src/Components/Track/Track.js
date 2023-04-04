@@ -72,7 +72,12 @@ class Track extends React.Component {
         if (this.state.isPlaying) {
             audio.pause();
         } else {
-            audio.play();
+            fetch(this.props.track.preview_url)
+                .then((response) => response.blob())
+                .then((blob) => {
+                    audio.srcObject = blob;
+                    audio.play();
+                });
         }
         this.setState({ isPlaying: !this.state.isPlaying });
     }
@@ -93,7 +98,6 @@ class Track extends React.Component {
                 {this.renderAction()}
                 <audio
                     ref={this.audioRef}
-                    src={this.props.track.preview_url}
                     onEnded={() => this.setState({ isPlaying: false })}
                 />
             </div>
