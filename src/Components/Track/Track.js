@@ -92,22 +92,26 @@ class Track extends React.Component {
                 <div className="Track-information">
                     <h3>
                         {this.props.track.name}
-                        <i
-                            className={`fas fa-play-circle ${this.state.isPlaying ? 'playing' : ''}`}
-                            onClick={() => this.playPreview()}
-                        />
+                        {this.props.track.preview_url && (
+                            <i
+                                className={`fas fa-play-circle ${this.state.isPlaying ? 'playing' : ''}`}
+                                onClick={() => this.playPreview()}
+                            />
+                        )}
                     </h3>
-                    <p>{this.props.track.artist} | {this.props.track.album}</p> | {this.props.track.preview_url}
+                    <p>{this.props.track.artist} | {this.props.track.album}</p>
                 </div>
                 {this.renderAction()}
                 <audio
                     ref={this.audioRef}
+                    src={this.props.track.preview_url}
                     type="audio/mpeg"
                     onEnded={() => this.setState({ isPlaying: false })}
                 />
             </div>
         );
     }
+
 }
 
 export default Track;
