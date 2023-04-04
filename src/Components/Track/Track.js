@@ -69,6 +69,12 @@ class Track extends React.Component {
 
     playPreview() {
         const audio = this.audioRef.current;
+
+        if (!this.props.track.preview_url) {
+            console.log("No preview available for this track.");
+            return;
+        }
+
         if (this.state.isPlaying) {
             audio.pause();
         } else {
