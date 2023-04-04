@@ -72,12 +72,8 @@ class Track extends React.Component {
         if (this.state.isPlaying) {
             audio.pause();
         } else {
-            fetch(this.props.track.preview_url)
-                .then((response) => response.blob())
-                .then((blob) => {
-                    audio.srcObject = blob;
-                    audio.play();
-                });
+            audio.src = this.props.track.preview_url;
+            audio.play();
         }
         this.setState({ isPlaying: !this.state.isPlaying });
     }
