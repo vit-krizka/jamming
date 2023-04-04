@@ -94,6 +94,7 @@ class Track extends React.Component {
                 {this.renderAction()}
                 <audio
                     ref={this.audioRef}
+                    type="audio/mpeg"
                     onEnded={() => this.setState({ isPlaying: false })}
                 />
             </div>
